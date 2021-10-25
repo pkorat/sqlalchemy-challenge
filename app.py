@@ -58,10 +58,7 @@ def precipitation():
 
     session.close()
 
-    perc_dic = {}
-
-    for date, perc in prec_data:
-        perc_dic[date].append(perc)
+    perc_dic = {date:perc for date, perc in prec_data}
 
     return jsonify(perc_dic)
 
